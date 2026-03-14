@@ -200,7 +200,7 @@ const DATA = {
     September: {
       career: "Portfolio project #3 · apply to full-time roles",
       finance: "First net worth calculation · spend 20% less",
-      family: "Family celebration · write what family means to you",
+      family: "Family celebration · write what family means to me",
       growth: "Book #9 · attend tech conference · teach someone",
       creative: "Join a hackathon · 3rd blog post",
       mindset: "Letter to March self · start Sunday review habit",
@@ -215,11 +215,11 @@ const DATA = {
     },
     November: {
       career: "Keep grinding interviews · review skill growth",
-      finance: "Year-end savings review · did you hit your target?",
+      finance: "Year-end savings review · did I hit my target?",
       family: "Year-end celebration · thank mentors & supporters",
       growth: "Book #11 · write 1-page 2026 learnings summary",
       creative: "Year-in-review post · plan 2027 project",
-      mindset: "30 gratitudes · who did you become this year?",
+      mindset: "30 gratitudes · who did I become this year?",
     },
     December: {
       career: "Full career review · update GitHub & LinkedIn",
@@ -238,7 +238,7 @@ const DATA = {
         "Start year with family vision share · discuss future with partner",
       growth: "Book #1 of 2027 · set 3 non-negotiable habits",
       creative: "Brainstorm startup ideas · research target users",
-      mindset: "Write 2027 vision · set your word/theme for the year",
+      mindset: "Write 2027 vision · set my word/theme for the year",
     },
     February: {
       career: "Land 2 final-round interviews · advanced system design",
@@ -247,7 +247,7 @@ const DATA = {
       growth: "Book #2 · join accountability partner",
       creative: "Build rough prototype · validate with 5 target users",
       mindset:
-        "30-day gratitude & visualization · write: what kind of partner?",
+        "30-day gratitude & visualization · write: what kind of partner am I?",
     },
     March: {
       career: "🎉 LAND FIRST FULL-TIME SWE ROLE · negotiate salary!",
@@ -280,7 +280,7 @@ const DATA = {
     June: {
       career: "Mid-year review · propose improvement at work · stretch project",
       finance: "$5K saved? ✅ · review wedding fund · estimate costs",
-      family: "💍 PROPOSE — create a moment showing your love & commitment",
+      family: "💍 PROPOSE — create a moment showing my love & commitment",
       growth: "Book #6 · short cloud or system design course",
       creative: "100 users · landing page · submit to Product Hunt",
       mindset: "Mid-year reflection · grateful: job, future & love",
@@ -301,7 +301,7 @@ const DATA = {
       growth: "Book #8 · deep technical book or conference",
       creative: "250 users · explore premium features · collaborate",
       mindset:
-        "Separate work & love time clearly · write what you love about partner",
+        "Separate work & love time clearly · write what I love about my partner",
     },
     September: {
       career: "Mentor a new hire · complete end-to-end feature solo",
@@ -310,7 +310,7 @@ const DATA = {
       growth: "Marriage & partnership book · invest in relationship = career",
       creative: "Ship v2 update · best technical blog post · speak at meetup",
       mindset:
-        "Write letter to your future married self · grateful for the distance",
+        "Write letter to my future married self · grateful for the distance",
     },
     October: {
       career:
@@ -327,7 +327,7 @@ const DATA = {
       finance: "Final wedding payments · net worth vs Jan 2027 comparison",
       family:
         "Final pre-wedding celebrations · express deep gratitude to parents",
-      growth: "Book #11 · reflect: who were you in January vs now?",
+      growth: "Book #11 · reflect: who was I in January vs now?",
       creative: "2027 product year-in-review · document everything built",
       mindset:
         "Pre-wedding meditation retreat · write full vows from the heart",
@@ -335,7 +335,7 @@ const DATA = {
     December: {
       career: "Share 2027 wins with team · set 2028 career goals boldly",
       finance: "Calculate full 2027 savings ✅ · set up joint 2028 goals",
-      family: "💍🎊 GET MARRIED — celebrate the love of your life!",
+      family: "💍🎊 GET MARRIED — celebrate the love of my life!",
       growth: "Book #12 ✅ · biggest life lesson of 2027",
       creative: "Celebrate product progress · write biggest creative lesson",
       mindset:
@@ -368,7 +368,7 @@ const DATA = {
       family: "🥂 1 YEAR OF MARRIAGE · write letter to partner about year 1",
       growth: "Software architecture book · contribute to open source",
       creative: "500 users · introduce freemium or paid tier",
-      mindset: "Reflect on 1 year of marriage · continue to date your partner",
+      mindset: "Reflect on 1 year of marriage · continue to date my partner",
     },
     April: {
       career:
@@ -386,7 +386,7 @@ const DATA = {
       growth: "Product strategy book · tech conference if possible",
       creative: "🎉 1,000 USERS · launch post · validate willingness to pay",
       mindset:
-        "Celebrate 1K users — you built something real. What is the mission?",
+        "Celebrate 1K users — I built something real. What is my mission?",
     },
     June: {
       career:
@@ -394,10 +394,9 @@ const DATA = {
       finance: "Full mid-year financial review as couple · set H2 targets",
       family:
         "Proper vacation together · deep conversations about shared future",
-      growth:
-        "Book #6/15 · course/workshop that scares you · blog 100+ readers",
+      growth: "Book #6/15 · course/workshop that scares me · blog 100+ readers",
       creative: "Launch monetization · set year-end revenue goal",
-      mindset: "Mid-year life audit · is daily life aligned with values?",
+      mindset: "Mid-year life audit · is daily life aligned with my values?",
     },
     July: {
       career: "🎉 PROMOTED TO MID-LEVEL ENGINEER · celebrate · what's next?",
@@ -414,7 +413,7 @@ const DATA = {
         "Higher responsibilities post-promotion · technical leadership in project",
       finance: "$20K milestone? · auto increase investment post-raise",
       family:
-        "Both families experience · write what you love about life together",
+        "Both families experience · write what I love about life together",
       growth: "Deep work / productivity book · second tech skill (ML, devops)",
       creative: "Scale: marketing & partnerships · reach $100 MRR",
       mindset: "Mid-level = more ownership · protect energy · learn to say no",
@@ -429,7 +428,7 @@ const DATA = {
       mindset: "Stoic journal · grateful — living a life many dream of",
     },
     October: {
-      career: "Own your domain · year-end self-assessment · stretch goal",
+      career: "Own my domain · year-end self-assessment · stretch goal",
       finance: "$22K+ savings · home purchase realistic in 2029?",
       family: "Year-end family planning · love letter to partner ❤️",
       growth:
@@ -444,7 +443,7 @@ const DATA = {
       family: "Heartfelt holiday season · give back financially & emotionally",
       growth: "Book #14/15 · 5 things that transformed me in 2028",
       creative: "Product year-in-review · celebrate: real users, real revenue",
-      mindset: "30 gratitudes · how has mindset grown in 2 years?",
+      mindset: "30 gratitudes · how has my mindset grown in 2 years?",
     },
     December: {
       career:
@@ -473,7 +472,7 @@ const DATA = {
       finance: "Diversify income streams · start tracking net worth monthly",
       family: "Valentine's experience · deep 5-year family vision talk",
       growth:
-        "Technical leadership book · build system for retaining what you read",
+        "Technical leadership book · build system for retaining what I read",
       creative: "Hire a freelancer · reach $300 MRR",
       mindset:
         "Lead with empathy · what does senior leadership look like for me?",
@@ -504,12 +503,12 @@ const DATA = {
       career:
         "Direct promotion talk with manager · deliver senior-level output",
       finance: "$20K+ saved · side income meaningful % of monthly expenses?",
-      family: "Family holiday trip · partner thriving — how can you help?",
+      family: "Family holiday trip · partner thriving — how can I help?",
       growth:
         "Wealth building book · publish most-read post yet · speak at meetup",
       creative: "🎉 $1,000 MRR · write: How I reached $1K MRR (share widely!)",
       mindset:
-        "Celebrate $1K MRR — you built a real business! What does freedom mean?",
+        "Celebrate $1K MRR — I built a real business! What does freedom mean to me?",
     },
     June: {
       career: "Mid-year: promotion imminent? · own narrative · document impact",
@@ -519,7 +518,7 @@ const DATA = {
       growth: "Book #9/18 · who is the person I am becoming?",
       creative:
         "Scale: paid ads / partnerships · hire help — VA, designer, co-founder?",
-      mindset: "Mid-year life audit · living in alignment with values?",
+      mindset: "Mid-year life audit · living in alignment with my values?",
     },
     July: {
       career: "🎉 PROMOTED TO SENIOR SOFTWARE ENGINEER · own decisions fully!",
@@ -564,13 +563,13 @@ const DATA = {
     November: {
       career: "Year-end: show massive impact · 2030 vision to manager",
       finance:
-        "🏆 HIT $50K NET WORTH · celebrate with partner — you did this together",
+        "🏆 HIT $50K NET WORTH · celebrate with partner — we did this together",
       family:
         "Fully present holiday season · gratitude to partner, parents & mentors",
       growth: "Book #17/18 · best career year-in-review ever",
       creative: "2029 product retrospective · set bold 2030 goal: $5K MRR",
       mindset:
-        "Senior Engineer + Husband + Builder. Rest deeply — you earned it.",
+        "Senior Engineer + Husband + Builder. Rest deeply — I earned it.",
     },
     December: {
       career:
@@ -634,14 +633,14 @@ const DATA = {
         "Book #10/20 · start newsletter or blog series — unique knowledge",
       creative: "🏆 $5,000 MRR · bootstrap further or raise a seed round?",
       mindset:
-        "You said $5K MRR in 2026. You did it. Write letter to student self.",
+        "I said $5K MRR in 2026. I did it. Write letter to student self.",
     },
     June: {
       career: "Operating at peak level? · lead major platform · plan H2 impact",
       finance:
         "Full mid-year review as couple · set H2 target: close gap to $80K",
       family:
-        "Disconnected holiday with partner · how has relationship grown in 4+ years?",
+        "Disconnected holiday with partner · how has my relationship grown in 4+ years?",
       growth: "Book #11/20 · what is the biggest chapter still ahead?",
       creative:
         "Scale team or product aggressively in H2 · major launch · $10K MRR goal",
@@ -654,8 +653,7 @@ const DATA = {
         "$70K net worth milestone · $80K+ salary confirmed or negotiated",
       family:
         "Baby arriving? Be ready with joy 💕 · still fully showing up for partner",
-      growth:
-        "Legacy & wealth book · build something that outlasts your career",
+      growth: "Legacy & wealth book · build something that outlasts my career",
       creative:
         "$7K MRR · founder story that inspires others · think: $1M ARR path?",
       mindset:
@@ -663,7 +661,7 @@ const DATA = {
     },
     August: {
       career:
-        "Largest scope project of your career · engineer they can't afford to lose",
+        "Largest scope project of my career · engineer they can't afford to lose",
       finance:
         "$72K+ — almost at $80K goal · invest everything possible this month",
       family: "Support partner unconditionally · who made this life possible?",
@@ -673,8 +671,7 @@ const DATA = {
       mindset: "This is not the end — it's the beginning of the next level.",
     },
     September: {
-      career:
-        "Speak at major industry event · recognized name in your community",
+      career: "Speak at major industry event · recognized name in my community",
       finance:
         "$75K net worth — final push · side project: $5K+/month to household?",
       family:
@@ -683,20 +680,17 @@ const DATA = {
       creative:
         "$9K MRR — approaching $10K · what's the exit or long-term vision?",
       mindset:
-        "4 years from student. You've built everything. What is the purpose?",
+        "4 years from student. I've built everything. What is my purpose?",
     },
     October: {
-      career:
-        "Most impactful project of your career · 5-year journey documented",
+      career: "Most impactful project of my career · 5-year journey documented",
       finance:
-        "$78K net worth — 2 months to hit $80K · plan generosity: who can you help?",
+        "$78K net worth — 2 months to hit $80K · plan generosity: who can I help?",
       family:
         "Unforgettable holiday plan · love letter to partner for anniversary 💌",
       growth: "Book #17/20 · teach a course or bootcamp to new engineers",
-      creative:
-        "🏆 $10,000 MRR · the goal you set in 2026 — celebrate it fully!",
-      mindset:
-        "$10K MRR — celebrate with your partner. You built this TOGETHER.",
+      creative: "🏆 $10,000 MRR · the goal I set in 2026 — celebrate it fully!",
+      mindset: "$10K MRR — celebrate with my partner. I built this TOGETHER.",
     },
     November: {
       career: "Peak impact year-end review · 2031: Staff / CTO / Startup CEO?",
@@ -712,13 +706,13 @@ const DATA = {
     },
     December: {
       career:
-        "Senior SWE ✅ at top startup ✅ · you are the engineer you once looked up to",
+        "Senior SWE ✅ at top startup ✅ · I am the engineer I once looked up to",
       finance:
-        "Financially independent ✅ · $80K+ salary, $80K+ net worth — you are free",
+        "Financially independent ✅ · $80K+ salary, $80K+ net worth — I am free",
       family:
-        "Married ✅ Strong family ✅ · they believed in you from the beginning",
+        "Married ✅ Strong family ✅ · they believed in me from the beginning",
       growth:
-        "Book #20 ✅ · 75+ books over 5 years · you are the person you designed",
+        "Book #20 ✅ · 75+ books over 5 years · I am the person I designed",
       creative:
         "$10K MRR ✅ Real company ✅ · enter 2031 with a real business & mission",
       mindset:
@@ -739,7 +733,7 @@ const MILESTONES = [
     icon: "💍",
     label: "Marriage",
     val: "Dec 2027",
-    sub: "the love of your life",
+    sub: "the love of my life",
     y: 2027,
   },
   { icon: "📈", label: "Promotion", val: "Mid-Level", sub: "in 2028", y: 2028 },
@@ -769,13 +763,13 @@ const MILESTONES = [
     icon: "👥",
     label: "Users",
     val: "10,000+",
-    sub: "people using your product",
+    sub: "people using my product",
     y: 2030,
   },
   { icon: "📚", label: "Books Read", val: "75+", sub: "over 5 years", y: 2030 },
 ];
 
-export default function App() {
+export default function Infographic() {
   const [activeYear, setActiveYear] = useState(2026);
   const [activeMonth, setActiveMonth] = useState("March");
   const [tab, setTab] = useState("month"); // "month" | "daily" | "milestones"
@@ -855,7 +849,7 @@ export default function App() {
                   lineHeight: 1.1,
                 }}
               >
-                🗺️ Your 5-Year Life Roadmap
+                🗺️ My 5-Year Life Roadmap
               </h1>
             </div>
             <div style={{ display: "flex", gap: 16 }}>
@@ -1071,7 +1065,7 @@ export default function App() {
                   <div
                     style={{ fontWeight: 800, fontSize: 18, color: "#be123c" }}
                   >
-                    December 2027 — Your Wedding Month! 🎊
+                    December 2027 — My Wedding Month! 🎊
                   </div>
                   <div
                     style={{
@@ -1081,9 +1075,9 @@ export default function App() {
                       lineHeight: 1.5,
                     }}
                   >
-                    You've built your career, saved your money, grown as a
-                    person — now marry the love of your life and begin your
-                    greatest chapter together.
+                    I've built my career, saved my money, grown as a person —
+                    now marry the love of my life and begin my greatest chapter
+                    together.
                   </div>
                 </div>
               </div>
@@ -1428,8 +1422,8 @@ export default function App() {
                 }}
               >
                 💡 <strong style={{ color: "#0f172a" }}>Tip:</strong> These
-                habits compound. Miss 1 day — forgive yourself and restart. Miss
-                3 days — it becomes a pattern. Protect these daily rituals
+                habits compound. Miss 1 day — forgive myself and restart. Miss 3
+                days — it becomes a pattern. Protect these daily rituals
                 fiercely.
               </div>
             </div>
@@ -1459,7 +1453,7 @@ export default function App() {
                   🏆 5-Year Milestones
                 </div>
                 <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 4 }}>
-                  The commitments you're making to yourself — by December 2030
+                  The commitments I'm making to myself — by December 2030
                 </div>
               </div>
               <div
@@ -1665,8 +1659,8 @@ export default function App() {
               lineHeight: 1.7,
             }}
           >
-            "You don't rise to the level of your goals. You fall to the level of
-            your systems."
+            "I don't rise to the level of my goals. I fall to the level of my
+            systems."
           </div>
           <div
             style={{
