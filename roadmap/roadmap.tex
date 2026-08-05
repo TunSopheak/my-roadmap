@@ -1,48 +1,33 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
-% ============================================================
-% Tun Sopheak - Career & Life Roadmap
-% Compile with: xelatex roadmap.tex (run twice for references)
-% ============================================================
-
-\usepackage[a4paper,top=14mm,bottom=16mm,left=15mm,right=15mm,headheight=15pt]{geometry}
+\usepackage[a4paper,top=13mm,bottom=15mm,left=14mm,right=14mm,headheight=14pt]{geometry}
 \usepackage{fontspec}
-\usepackage{ucharclasses}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{booktabs}
-\usepackage{longtable}
 \usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{hyperref}
-\usepackage{bookmark}
-\usepackage{pifont}
-\usepackage{amssymb}
+\usepackage{multicol}
 \usepackage{setspace}
 \usepackage{ragged2e}
+\usepackage{xparse}
 
 \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\IfFontExistsTF{Khmer OS Siemreap}{
-  \setmainfont{Khmer OS Siemreap}[AutoFakeBold=2]
-  \setsansfont{Khmer OS Siemreap}[AutoFakeBold=2]
-}{
-  \setmainfont{Noto Sans Khmer}
-  \setsansfont{Noto Sans Khmer}
-  \newfontfamily\latinfont{Noto Sans}
-  \setTransitionsFor{BasicLatin}{\latinfont}{\normalfont}
-  \setTransitionsFor{Latin1Supplement}{\latinfont}{\normalfont}
-  \setTransitionsFor{LatinExtendedA}{\latinfont}{\normalfont}
-  \setTransitionsFor{LatinExtendedB}{\latinfont}{\normalfont}
-  \setTransitionsFor{GeneralPunctuation}{\latinfont}{\normalfont}
-}
-
+\setmainfont{Noto Sans}
+\setsansfont{Noto Sans}
+\newfontfamily\khmerfont{Noto Sans Khmer}[Script=Khmer,AutoFakeBold=2]
+\newcommand{\km}[1]{{\khmerfont #1}}
 \XeTeXlinebreaklocale "km"
 \XeTeXlinebreakskip=0pt plus 1pt
-\setstretch{1.12}
+\setstretch{1.08}
 \emergencystretch=2em
 
 \definecolor{Ink}{HTML}{0F172A}
@@ -52,412 +37,322 @@
 \definecolor{Paper}{HTML}{F8FAFC}
 \definecolor{Blue}{HTML}{2563EB}
 \definecolor{BlueDark}{HTML}{1E3A8A}
+\definecolor{Indigo}{HTML}{4F46E5}
 \definecolor{Cyan}{HTML}{0891B2}
+\definecolor{Orange}{HTML}{EA580C}
 \definecolor{Green}{HTML}{059669}
-\definecolor{Amber}{HTML}{D97706}
 \definecolor{Rose}{HTML}{E11D48}
 \definecolor{Violet}{HTML}{7C3AED}
+\definecolor{Gray}{HTML}{64748B}
 \color{Ink}
 
-\hypersetup{
-  colorlinks=true,
-  linkcolor=BlueDark,
-  urlcolor=Blue,
-  pdftitle={Tun Sopheak - Five-Year Career and Life Roadmap},
-  pdfauthor={Tun Sopheak}
-}
-
+\hypersetup{colorlinks=true,linkcolor=BlueDark,urlcolor=Blue,pdftitle={Tun Sopheak Career and Life Roadmap Planner},pdfauthor={Tun Sopheak}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\color{Muted}TUN SOPHEAK \textbar\ CAREER \& LIFE ROADMAP}
-\fancyhead[R]{\small\color{Muted}AUG 2026 - AUG 2031}
-\fancyfoot[L]{\small\color{Muted}Review monthly. Execute daily.}
+\fancyhead[L]{\small\color{Muted}TUN SOPHEAK \textbar\ CAREER \& LIFE PLANNER}
+\fancyhead[R]{\small\color{Muted}2026--2031}
+\fancyfoot[L]{\small\color{Muted}Plan the year. Win the month.}
 \fancyfoot[R]{\small\color{Muted}\thepage\ / \pageref{LastPage}}
-\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.35pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\titleformat{\section}{\Large\bfseries\color{BlueDark}}{\thesection}{0.6em}{}[\vspace{2pt}\color{Blue}\titlerule]
-\titleformat{\subsection}{\large\bfseries\color{Ink}}{\thesubsection}{0.6em}{}
-\titlespacing*{\section}{0pt}{12pt}{7pt}
-\titlespacing*{\subsection}{0pt}{9pt}{5pt}
-
-\setlist[itemize]{leftmargin=*,itemsep=2.2pt,topsep=3pt,parsep=0pt}
-\setlist[enumerate]{leftmargin=*,itemsep=2.2pt,topsep=3pt,parsep=0pt}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=2pt,parsep=0pt}
 \newlist{checklist}{itemize}{1}
-\setlist[checklist]{label=\raisebox{0.1ex}{\color{Blue}$\square$},leftmargin=*,itemsep=2.8pt,topsep=3pt}
+\setlist[checklist]{label=\raisebox{0.12ex}{\color{Blue}\(\square\)},leftmargin=*,itemsep=3pt,topsep=2pt}
 
-\newcommand{\KPI}[1]{\textcolor{Violet}{\textbf{KPI:} #1}}
-\newcommand{\RuleText}[1]{\textcolor{Amber}{\textbf{Rule:} #1}}
-\newcommand{\RiskText}[1]{\textcolor{Rose}{\textbf{Risk Control:} #1}}
+\titleformat{\section}{\Large\bfseries\color{BlueDark}}{}{0pt}{}[\vspace{2pt}\color{Blue}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{6pt}
 
-\newtcolorbox{heroBox}{enhanced,colback=BlueDark,colframe=BlueDark,coltext=white,boxrule=0pt,arc=3mm,left=7mm,right=7mm,top=6mm,bottom=6mm}
-\newtcolorbox{summaryBox}[1][]{enhanced,colback=Paper,colframe=Line,boxrule=0.7pt,arc=2mm,left=4mm,right=4mm,top=3mm,bottom=3mm,#1}
-\newtcolorbox{priorityBox}[2][]{enhanced,colback=#2!6!white,colframe=#2!80!black,boxrule=0.8pt,arc=2mm,left=4mm,right=4mm,top=3mm,bottom=3mm,borderline west={3pt}{0pt}{#2},#1}
+\newcommand{\WriteLine}[1][\linewidth]{\rule{#1}{0.4pt}}
+\newcommand{\BlankLines}[1]{\par\vspace{1.5mm}\foreach \n in {1,...,#1}{\WriteLine\par\vspace{3.2mm}}}
+\newcommand{\CheckBlank}[1]{\noindent\(\square\)\ #1\hfill\WriteLine[0.58\linewidth]\par\vspace{2mm}}
+\newcommand{\IconBox}[2]{\tikz[baseline=-0.6ex]\node[rounded corners=2pt,fill=#1!10,text=#1,inner sep=4pt]{#2};}
 
-\newcommand{\PhaseBox}[5]{
-\begin{tcolorbox}[enhanced,breakable,colback=#1!5!white,colframe=#1!75!black,boxrule=0.8pt,arc=2.5mm,left=4mm,right=4mm,top=3mm,bottom=3mm,title={\textbf{#2}},coltitle=white,colbacktitle=#1!85!black,fonttitle=\bfseries]
-\textbf{រយៈពេល៖} #3\\[1pt]
-\textbf{Theme៖} #4\\[2pt]
-#5
-\end{tcolorbox}
+\newtcolorbox{softbox}[2][]{enhanced,colback=#2!4!white,colframe=#2!35!white,boxrule=.6pt,arc=2mm,left=3mm,right=3mm,top=2.5mm,bottom=2.5mm,#1}
+\newtcolorbox{darkbox}[1][]{enhanced,colback=Ink,colframe=Ink,coltext=white,boxrule=0pt,arc=3mm,left=6mm,right=6mm,top=5mm,bottom=5mm,#1}
+
+\NewDocumentCommand{\Category}{m m m}{%
+  \begin{softbox}{#1}\centering\IconBox{#1}{#2}\\[-1mm]\small\bfseries #3\end{softbox}%
 }
 
-\newcommand{\MonthPlan}[5]{
-\begin{tcolorbox}[enhanced,breakable,colback=white,colframe=#1!75!black,boxrule=0.8pt,arc=2.5mm,left=4mm,right=4mm,top=3mm,bottom=3mm,title={\large\textbf{#2}},coltitle=white,colbacktitle=#1!85!black,fonttitle=\bfseries,before skip=6pt,after skip=6pt]
-\textbf{Primary Focus៖} #3
-\begin{checklist}#4\end{checklist}
-\begin{summaryBox}[colback=#1!4!white,colframe=#1!25!white]
-\small\textbf{Month-End Evidence៖} #5
-\end{summaryBox}
-\end{tcolorbox}
+\NewDocumentCommand{\Phase}{m m m m m}{%
+\begin{softbox}[borderline west={3pt}{0pt}{#1}]{#1}
+  \begin{minipage}[t]{0.19\linewidth}
+    \centering\IconBox{#1}{#2}\\[1mm]
+    {\bfseries\color{#1}#3}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.76\linewidth}
+    {\large\bfseries #4}\par\vspace{1mm}
+    #5
+  \end{minipage}
+\end{softbox}
+}
+
+\NewDocumentCommand{\YearSheet}{m m m m m}{%
+\clearpage
+\section*{\IconBox{#2}{#3}\hspace{2mm}Annual Planner -- #1}
+\begin{softbox}{#2}
+  {\bfseries Theme suggestion:} #4\\
+  {\bfseries Strategic direction:} #5
+\end{softbox}
+
+\vspace{2mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Blue}\textbf{My theme for this year}\BlankLines{2}\end{softbox} &
+\begin{softbox}{Violet}\textbf{What do I want most this year?}\BlankLines{2}\end{softbox}\\[2mm]
+\begin{softbox}{Green}\textbf{What must be true by year-end?}\BlankLines{2}\end{softbox} &
+\begin{softbox}{Cyan}\textbf{Skills to master}\BlankLines{2}\end{softbox}
+\end{tabularx}
+
+\vspace{2mm}
+\begin{softbox}{Indigo}
+\textbf{My top five priorities}
+\begin{enumerate}[leftmargin=8mm,itemsep=3.5mm]
+  \item \WriteLine[0.86\linewidth]
+  \item \WriteLine[0.86\linewidth]
+  \item \WriteLine[0.86\linewidth]
+  \item \WriteLine[0.86\linewidth]
+  \item \WriteLine[0.86\linewidth]
+\end{enumerate}
+\end{softbox}
+
+\vspace{2mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Orange}\textbf{Projects / evidence to finish}\BlankLines{3}\end{softbox} &
+\begin{softbox}{Green}\textbf{Money / family target}\BlankLines{3}\end{softbox}\\[2mm]
+\begin{softbox}{Rose}\textbf{Health / relationship target}\BlankLines{3}\end{softbox} &
+\begin{softbox}{Gray}\textbf{Biggest risk and prevention}\BlankLines{3}\end{softbox}
+\end{tabularx}
+}
+
+\NewDocumentCommand{\MonthSheet}{m m m m m}{%
+\clearpage
+\section*{\IconBox{#2}{\faCalendar}\hspace{2mm}#3 -- Monthly Planner}
+\begin{softbox}{#2}
+  {\bfseries Theme:} #4
+\end{softbox}
+
+\vspace{2mm}
+\begin{softbox}{Blue}
+\textbf{Suggested definition of done}
+\begin{checklist}
+#5
+\end{checklist}
+\end{softbox}
+
+\vspace{2mm}
+\begin{softbox}{Orange}
+\textbf{Three must-win outcomes}\par\vspace{1mm}
+\CheckBlank{1.}\CheckBlank{2.}\CheckBlank{3.}
+\end{softbox}
+
+\vspace{2mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Blue}\textbf{\faBriefcase\ Career / Job}\BlankLines{1}\end{softbox} &
+\begin{softbox}{Indigo}\textbf{\faLaptopCode\ Engineering / Coding}\BlankLines{1}\end{softbox}\\[1.5mm]
+\begin{softbox}{Cyan}\textbf{\faMobile\ Mobile / Flutter}\BlankLines{1}\end{softbox} &
+\begin{softbox}{Violet}\textbf{\faFolderOpen\ Portfolio}\BlankLines{1}\end{softbox}\\[1.5mm]
+\begin{softbox}{Orange}\textbf{\faRobot\ Kibo-RPC}\BlankLines{1}\end{softbox} &
+\begin{softbox}{Green}\textbf{\faLanguage\ English}\BlankLines{1}\end{softbox}\\[1.5mm]
+\begin{softbox}{Green}\textbf{\faWallet\ Finance / Wedding}\BlankLines{1}\end{softbox} &
+\begin{softbox}{Gray}\textbf{\faLandmark\ Civil-Service Study}\BlankLines{1}\end{softbox}
+\end{tabularx}
+
+\vspace{1.5mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Rose}\textbf{\faHeartbeat\ Health / Energy}\BlankLines{1}\end{softbox} &
+\begin{softbox}{Rose}\textbf{\faHeart\ Family / Relationship}\BlankLines{1}\end{softbox}
+\end{tabularx}
+
+\vspace{1.5mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Rose}\textbf{Evidence created}\BlankLines{1}\end{softbox} &
+\begin{softbox}{Blue}\textbf{Lesson / next-month change}\BlankLines{1}\end{softbox}
+\end{tabularx}
+}
+
+\NewDocumentCommand{\QuarterSheet}{m m}{%
+\clearpage
+\section*{\IconBox{Violet}{\faChartLine}\hspace{2mm}Quarterly Review -- #1}
+\begin{softbox}{Violet}\textbf{Quarter theme}\BlankLines{2}\end{softbox}
+\vspace{2mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Green}\textbf{What worked?}\BlankLines{5}\end{softbox} &
+\begin{softbox}{Rose}\textbf{What did not work?}\BlankLines{5}\end{softbox}\\[2mm]
+\begin{softbox}{Blue}\textbf{Evidence created}\BlankLines{5}\end{softbox} &
+\begin{softbox}{Orange}\textbf{Money / life review}\BlankLines{5}\end{softbox}
+\end{tabularx}
+\vspace{2mm}
+\begin{softbox}{#2}
+\textbf{Three must-wins for the next quarter}
+\CheckBlank{1.}\CheckBlank{2.}\CheckBlank{3.}
+\end{softbox}
 }
 
 \begin{document}
-
-% ---------------- COVER ----------------
 \thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[Ink] (current page.north west) rectangle ([yshift=-70mm]current page.north east);
+  \fill[Blue] ([yshift=-70mm]current page.north west) rectangle ([yshift=-74mm]current page.north east);
+\end{tikzpicture}
 \vspace*{10mm}
-\begin{heroBox}
-{\Huge\bfseries ផែនទីផ្លូវអាជីព និងជីវិត ៥ ឆ្នាំ}\\[2mm]
-{\Large Five-Year Career \& Life Roadmap}\\[4mm]
-{\large ខែសីហា 2026 ដល់ ខែសីហា 2031}\\[6mm]
-{\LARGE\bfseries ទុន សុភ័ក្ខ (Tun Sopheak)}\\[2mm]
-និស្សិតឆ្នាំទី៤ ផ្នែកវិទ្យាសាស្ត្រកុំព្យូទ័រ - RUPP - វេនយប់ E8
-\end{heroBox}
-
-\vspace{7mm}
-\begin{priorityBox}{Blue}
-\textbf{Career North Star}\\[2pt]
-បញ្ចប់បរិញ្ញាបត្រជាមួយសមត្ថភាពដែលអាចបង្ហាញបាន និងក្លាយជា \textbf{Software Engineer} ដែលអាចគ្រប់គ្រង Requirement, Design, Coding, Testing, Deployment និង Support Feature មួយ End-to-End។
-\end{priorityBox}
-
-\begin{priorityBox}{Rose}
-\textbf{Immediate Life Goal}\\[2pt]
-ទទួលបានការងារពេញម៉ោងផ្នែក Technology ឱ្យបានឆាប់ និងសន្សំប្រាក់សម្រាប់ពិធីមង្គលការដ៏កក់ក្តៅ សមរម្យ និងមានការទទួលខុសត្រូវនៅឆ្នាំ 2027។
-\end{priorityBox}
-
-\begin{summaryBox}
-\centering\Large\bfseries
-``Build skills that produce evidence. Build systems that survive busy days.''
-\end{summaryBox}
-
+{\color{white}\Huge\bfseries Career \& Life Roadmap Planner\par}
+\vspace{2mm}
+{\color{white!85}\Large \km{ផែនទីផ្លូវអាជីព និងជីវិត}\par}
+\vspace{4mm}
+{\color{white!75}\large August 2026 -- August 2031\par}
+\vspace{26mm}
+\begin{darkbox}
+{\Large\bfseries \km{ទុន សុភ័ក្ខ} (Tun Sopheak)}\\[2mm]
+RUPP Year 4 Computer Science \textbar\ Evening Class E8\\[1mm]
+\textbf{North Star:} Become a dependable Software Engineer.
+\end{darkbox}
+\vspace{5mm}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Blue}\centering\faCalendarCheck\\[1mm]\large\bfseries Plan the year\\\small Define what must be true by year-end.\end{softbox} &
+\begin{softbox}{Orange}\centering\faBullseye\\[1mm]\large\bfseries Win the month\\\small Choose three must-wins and create evidence.\end{softbox}
+\end{tabularx}
 \vfill
-\begin{center}
-\small\color{Muted}
-Version: 05 August 2026\\
-Source of truth: \href{https://github.com/TunSopheak/my-roadmap}{github.com/TunSopheak/my-roadmap}
-\end{center}
+\begin{center}\small\color{Muted}Interactive version: \url{https://tunsopheak.github.io/my-roadmap/}\end{center}
+
 \clearpage
+\section*{Icon and Category System}
+\begin{tabularx}{\textwidth}{X X X X X}
+\Category{Blue}{\faBriefcase}{Career / Job} &
+\Category{Indigo}{\faLaptopCode}{Engineering} &
+\Category{Cyan}{\faMobile}{Mobile / Flutter} &
+\Category{Violet}{\faFolderOpen}{Portfolio} &
+\Category{Orange}{\faRobot}{Kibo-RPC}\\[2mm]
+\Category{Green}{\faLanguage}{English} &
+\Category{Green}{\faWallet}{Finance / Wedding} &
+\Category{Gray}{\faLandmark}{Civil Service} &
+\Category{Rose}{\faHeartbeat}{Health / Energy} &
+\Category{Rose}{\faHeart}{Family / Relationship}
+\end{tabularx}
 
-\tableofcontents
+\vspace{4mm}
+\section*{Visual Roadmap: August 2026 -- December 2027}
+\Phase{Blue}{\faRocket}{AUG--DEC 2026}{Build the Foundation}{%
+\begin{checklist}
+\item Kibo-RPC registration, rules, simulator baseline, and disciplined experiments.
+\item Full-Stack refresh and Love my \km{ស្ទីល} v1.
+\item Flutter coursework, English speaking, CV, GitHub, and wedding-fund system.
+\end{checklist}}
+\vspace{2mm}
+\Phase{Orange}{\faBullseye}{JAN--JUN 2027}{Convert Skills into Opportunity}{%
+\begin{checklist}
+\item Complete Kibo pathway or publish a strong technical case study.
+\item Finish Year-4 mobile project and graduation requirements.
+\item Run a focused job-search and secure a full-time technology role or strong pipeline.
+\end{checklist}}
+\vspace{2mm}
+\Phase{Green}{\faBriefcase}{JUL--DEC 2027}{Stabilize Work and Life}{%
+\begin{checklist}
+\item Build a sustainable professional routine and work-impact log.
+\item Own features with tests, documentation, and release evidence.
+\item Complete responsible wedding preparation and create a joint 2028 plan.
+\end{checklist}}
+
+\YearSheet{2026}{Blue}{\faRocket}{Foundation, discipline, and competition readiness}{Build a credible base before chasing more opportunities.}
+\YearSheet{2027}{Green}{\faBullseye}{Graduation, first role, and responsible marriage}{Convert preparation into a stable career and life transition.}
+\YearSheet{2028}{Indigo}{\faBriefcase}{Reliable Software Engineer}{Own features, improve quality, and establish household stability.}
+\YearSheet{2029}{Cyan}{\faLayerGroup}{Mid-level readiness}{Handle ambiguity and own a technical area.}
+\YearSheet{2030}{Orange}{\faChartLine}{Strong mid-level impact}{Increase scope, influence, and business understanding.}
+\YearSheet{2031}{Violet}{\faCompass}{Senior-track direction}{Operate beyond assigned tickets and choose the next five-year path.}
+
+\MonthSheet{2026-08}{Blue}{August 2026}{Baseline \& Commitment}{
+\item Confirm Kibo team, roles, repository, and rules summary.
+\item Audit Full-Stack skills and create Love my \km{ស្ទីល} PRD.
+\item Record English baseline and create wedding-fund tracker.}
+\MonthSheet{2026-09}{Blue}{September 2026}{Registration \& Foundation}{
+\item Submit Kibo registration before the deadline.
+\item Create technical exercises, ERD, and working portfolio UI.
+\item Prepare CV, GitHub profile, and application tracker.}
+\MonthSheet{2026-10}{Blue}{October 2026}{Simulator \& Vertical Slice}{
+\item Produce a reproducible Kibo simulator run with logs.
+\item Deploy an authentication/product vertical slice.
+\item Complete two mock interviews.}
+\MonthSheet{2026-11}{Blue}{November 2026}{Robustness \& E-Commerce Core}{
+\item Build Kibo failure taxonomy and controlled experiments.
+\item Complete cart, order, and admin flows with 10+ tests.
+\item Publish a recruiter-ready README.}
+\MonthSheet{2026-12}{Blue}{December 2026}{Freeze, Demo \& Review}{
+\item Complete two Kibo mock rounds and a release candidate.
+\item Release Love my \km{ស្ទីល} v1 and one-page case study.
+\item Finalize the 2027 budget and quarterly priorities.}
+
+\MonthSheet{2027-01}{Orange}{January 2027}{Preliminary Readiness}{
+\item Maintain a last-known-good Kibo release and backup.
+\item Practice the technical pitch and English project explanation.
+\item Complete 20 high-quality application/network actions.}
+\MonthSheet{2027-02}{Orange}{February 2027}{Preliminary Round}{
+\item Complete the official submission process with evidence.
+\item Draft the Kibo retrospective and improve the portfolio.
+\item Complete three interview scorecards.}
+\MonthSheet{2027-03}{Orange}{March 2027}{Job Sprint}{
+\item Send 20--30 tailored applications.
+\item Prepare the graduation checklist and interview notebook.
+\item Write a 30-60-90 day plan for the first role.}
+\MonthSheet{2027-04}{Orange}{April 2027}{Finalist or Portfolio Leverage}{
+\item Prepare a final-ready release or public-safe Kibo case study.
+\item Add CI and Flutter architecture evidence.
+\item Get mentor feedback and complete two interviews.}
+\MonthSheet{2027-05}{Orange}{May 2027}{First Role Conversion}{
+\item Progress toward an offer or structured onboarding.
+\item Complete the working Flutter flow and documentation.
+\item Transfer wedding savings before optional spending.}
+\MonthSheet{2027-06}{Orange}{June 2027}{Graduation \& Stability}{
+\item Complete graduation artifacts and the mobile demo.
+\item Finish Kibo pathway and English reassessment.
+\item Update job status and wedding-fund gap.}
+\MonthSheet{2027-07}{Green}{July 2027}{Professional Rhythm}{
+\item Create a weekly work-impact log.
+\item Complete one end-to-end work item.
+\item Automate wedding savings and update the portfolio.}
+\MonthSheet{2027-08}{Green}{August 2027}{Ownership \& Wedding Planning}{
+\item Write clear performance expectations.
+\item Propose one technical improvement.
+\item Confirm the wedding date range and budget framework.}
+\MonthSheet{2027-09}{Green}{September 2027}{Engineer-Level Scope}{
+\item Release a feature with a design note and tests.
+\item Collect review feedback and share one lesson.
+\item Finalize the three-month wedding saving plan.}
+\MonthSheet{2027-10}{Green}{October 2027}{Performance \& Budget Lock}{
+\item Create a performance evidence file and six-week skill sprint.
+\item Lock wedding budget categories and contingencies.
+\item Record one English technical explanation.}
+\MonthSheet{2027-11}{Green}{November 2027}{Close Work Strong}{
+\item Request year-end feedback and document handover.
+\item Update the CV with measurable achievements.
+\item Prepare receipts and the 2028 household budget draft.}
+\MonthSheet{2027-12}{Green}{December 2027}{Marriage, Review \& Reset}{
+\item Complete the wedding without uncontrolled debt.
+\item Create a joint 2028 financial and family plan.
+\item Archive evidence and select three Q1-2028 outcomes.}
+
+\QuarterSheet{2026 Q3 -- Start and Commit}{Blue}
+\QuarterSheet{2026 Q4 -- Build and Demonstrate}{Blue}
+\QuarterSheet{2027 Q1 -- Compete and Apply}{Orange}
+\QuarterSheet{2027 Q2 -- Graduate and Convert}{Orange}
+\QuarterSheet{2027 Q3 -- Stabilize and Own}{Green}
+\QuarterSheet{2027 Q4 -- Close Strong and Reset}{Green}
+
 \clearpage
-
-\section{ស្ថានភាពបច្ចុប្បន្ន និងគោលការណ៍ដឹកនាំ}
-
-\begin{priorityBox}{Blue}
-\textbf{Current Reality}
-\begin{itemize}
-  \item និស្សិតឆ្នាំទី៤ RUPP ផ្នែក Computer Science វេនយប់ E8។
-  \item ពេលព្រឹក និងរសៀលត្រូវបានការពារសម្រាប់ Deep Work, Skills, Portfolio, Kibo-RPC និងការងារ។
-  \item Primary Technical Track: Full-Stack Web Development + Flutter Mobile Development។
-  \item Portfolio Flagship: E-commerce project \textbf{Love my ស្ទីល}។
-  \item Competition Priority: Kibo Robot Programming Challenge (Kibo-RPC)។
-  \item Long-Term Optionality: Micro-learning 30--45 នាទីរាល់ថ្ងៃ សម្រាប់ប្រឡងមន្ត្រីក្រមការ។
-\end{itemize}
-\end{priorityBox}
-
-\subsection{Priority Order នៅពេលការងារច្រើនពេក}
-\begin{enumerate}
-  \item Deadline មិនអាចផ្លាស់បាន៖ Kibo-RPC, University, Interview និង Work Deliverable។
-  \item Career Engine៖ Full-Stack, Flutter, Portfolio, English និង Job Applications។
-  \item Life Stability៖ Wedding Fund, Health, Sleep និង Relationship។
-  \item Long-Term Optionality៖ Civil-Service Study 30--45 នាទីរាល់ថ្ងៃ។
-\end{enumerate}
-\RuleText{ក្នុងមួយ Quarter មាន Must-Win Outcomes តែ 3៖ Career 1, Project/Competition 1 និង Life 1។}
-
-\section{ផែនការយុទ្ធសាស្ត្រ ៥ ឆ្នាំ}
-
-\subsection{Strategic Pillars}
-\begin{tabularx}{\textwidth}{>{\bfseries\color{BlueDark}}p{0.23\textwidth}X}
-Career \& Technical Depth & Full-Stack + Flutter, Git, SQL, API, Testing, Debugging, CI/CD, Documentation និង System Design។\\[3pt]
-Kibo-RPC Excellence & Simulation logs, reproducibility, failure analysis, robustness និង professional case study។\\[3pt]
-English for Work & Speaking, technical vocabulary, email writing, STAR stories និង project presentation។\\[3pt]
-Portfolio Proof & Love my ស្ទីល, Year-4 Mobile Project, live demos, README, architecture, tests និង case studies។\\[3pt]
-Finance \& Wedding & Full-time technology income, save-first system, wedding-fund target រហូតដល់ USD 10,000 នៅចុងឆ្នាំ 2027 និង emergency cash។\\[3pt]
-Long-Term Optionality & Civil-service micro-learning, health, sleep, exercise និង weekly review។
+\section*{Year-End Reflection -- 2026}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Green}\textbf{Wins and evidence}\BlankLines{8}\end{softbox} &
+\begin{softbox}{Orange}\textbf{Missed goals and reasons}\BlankLines{8}\end{softbox}
 \end{tabularx}
+\vspace{2mm}
+\begin{softbox}{Blue}\textbf{What must change in 2027?}\BlankLines{6}\end{softbox}
 
-\subsection{Five Annual Phases}
-
-\PhaseBox{Blue}{YEAR 1 - FOUNDATION TO FIRST ROLE}{សីហា 2026 - កក្កដា 2027}{Student to employable engineer}{
-\begin{itemize}
-  \item ត្រៀម និងប្រកួត Kibo-RPC ដោយប្រើ engineering discipline។
-  \item បង្កើត Love my ស្ទីល v1 និង Year-4 Flutter project ដែលអាច demo បាន។
-  \item ទទួលបាន Full-Time Technology Role មុនបញ្ចប់ ឬក្នុង 90 ថ្ងៃក្រោយបញ្ចប់ការសិក្សា។
-  \item អាចធ្វើ self-introduction, project pitch និង interview ជាភាសាអង់គ្លេស។
-\end{itemize}
-\KPI{Portfolio projects 2; Kibo case study 1; targeted applications 3--5/week; mock interviews 2/month; habit adherence 80\%.}
-}
-
-\PhaseBox{Green}{YEAR 2 - RESPONSIBLE SOFTWARE ENGINEER}{សីហា 2027 - កក្កដា 2028}{Reliability, ownership and stable married life}{
-\begin{itemize}
-  \item Own feature មួយពី requirement រហូតដល់ release និង support។
-  \item ពង្រឹង testing, code review, documentation, logging និង CI/CD។
-  \item រៀបចំពិធីមង្គលការ និង household finance ដោយគ្មានបំណុលបំផ្លាញអនាគត។
-\end{itemize}
-\KPI{End-to-end feature 1/quarter; technical write-up 1/quarter; work-impact log weekly; financial review monthly.}
-}
-
-\PhaseBox{Cyan}{YEAR 3 - MID-LEVEL READINESS}{សីហា 2028 - កក្កដា 2029}{Handle ambiguity and own a technical area}{
-\begin{itemize}
-  \item ជ្រើស specialization មួយ៖ Backend, Mobile ឬ Full-Stack។
-  \item សរសេរ design document, estimate work, handle production bugs និង improve reliability។
-  \item Mentor និស្សិត ឬ junior ម្នាក់ និងបង្កើត team standards។
-\end{itemize}
-\KPI{Own module/domain 1; lead medium project 1; mentor 1 person; technical presentation 1.}
-}
-
-\PhaseBox{Amber}{YEAR 4 - STRONG MID-LEVEL}{សីហា 2029 - កក្កដា 2030}{Increase scope, influence and business understanding}{
-\begin{itemize}
-  \item ដឹកនាំ project planning និង technical trade-off discussion។
-  \item កែលម្អ architecture, cost, security, observability ឬ developer experience ដែលអាចវាស់បាន។
-  \item ភ្ជាប់ engineering work ទៅ business value និង stakeholder needs។
-\end{itemize}
-\KPI{Cross-functional initiative 1; measurable reliability/performance improvement 1; mentees 2.}
-}
-
-\PhaseBox{Violet}{YEAR 5 - SENIOR-TRACK ENGINEER}{សីហា 2030 - សីហា 2031}{Ownership beyond assigned tickets}{
-\begin{itemize}
-  \item Own critical system/domain និងធ្វើ technical decisions មានអាយុកាលវែង។
-  \item ដឹកនាំ architecture review, incident learning, quality standards និង mentoring។
-  \item ជ្រើស next path៖ Senior IC, Engineering Lead, Product Engineer, International Opportunity ឬ Founder path។
-\end{itemize}
-\KPI{Senior-scope evidence portfolio; high-impact initiatives 2; mentees 2; public talk/article series 1.}
-}
-
-\subsection{Stage Gates}
-\begin{tabularx}{\textwidth}{>{\bfseries\color{BlueDark}}p{0.20\textwidth}XX}
-\toprule
-Gate & Evidence Required & Decision \\
-\midrule
-Employable & Deployed projects, clean GitHub, CV, project pitch, interview practice & Apply to roles with real engineering work.\\[3pt]
-Software Engineer & End-to-end feature, tests, documentation, deployment, support & Ask for larger ownership.\\[3pt]
-Mid-Level Ready & Handle ambiguity, own module, design solution, support others & Promotion discussion or role change based on evidence.\\[3pt]
-Senior-Track & Cross-team impact, architecture decisions, reliability, mentoring & Choose IC leadership, team leadership or product/founder path.\\
-\bottomrule
+\clearpage
+\section*{Year-End Reflection -- 2027}
+\begin{tabularx}{\textwidth}{X X}
+\begin{softbox}{Green}\textbf{Career and engineering growth}\BlankLines{8}\end{softbox} &
+\begin{softbox}{Rose}\textbf{Finance, marriage, and family}\BlankLines{8}\end{softbox}
 \end{tabularx}
-
-\section{ផែនការសកម្មភាពលម្អិត៖ សីហា 2026 - ធ្នូ 2027}
-
-\subsection{Weekly Operating System}
-\begin{tabularx}{\textwidth}{>{\bfseries\color{BlueDark}}p{0.18\textwidth}XX}
-\toprule
-Block & Student Mode & Employed Mode \\
-\midrule
-Morning & 08:00--10:30 Deep Work: Kibo, Flutter or Full-Stack & English 30 min + Civil-Service 30--45 min before work\\[3pt]
-Afternoon & Project build, applications, interview practice & Full-time work; protect focus; record impact\\[3pt]
-Evening & RUPP E8 classes; light review only & RUPP E8 until graduation; no heavy extra task\\[3pt]
-Sunday & Weekly review 20 min + next-week planning & Weekly review + relationship/wedding planning block\\
-\bottomrule
-\end{tabularx}
-
-\subsection{Kibo-RPC Execution Track}
-\begin{priorityBox}{Cyan}
-\begin{itemize}
-  \item Aug--Sep 2026: rules, registration, team roles, coordinate systems, local exercises។
-  \item Oct--Dec 2026: official simulator, baseline mission, logs, failure taxonomy, robust release។
-  \item Jan--Feb 2027: preliminary-round readiness, mock rounds, parameter tuning, backup version។
-  \item Apr--Jun 2027: finalist optimization ឬ public-safe professional case study និង retrospective។
-\end{itemize}
-\end{priorityBox}
-
-\subsection{Monthly Action Plan}
-
-\MonthPlan{Blue}{សីហា 2026 - Baseline and Commitment}{កំណត់ system និងចាប់ផ្ដើម Kibo-RPC ជាផ្លូវការ}{
-\item Confirm Kibo team, roles, communication channel និង repository។
-\item អាន rules និងសរសេរ mission summary + glossary។
-\item Audit Full-Stack skills: HTML/CSS, JavaScript, React, API, SQL, Git។
-\item បង្កើត PRD, user flow និង screen list សម្រាប់ Love my ស្ទីល។
-\item Record English baseline: self-introduction 2 min + project explanation 3 min។
-\item Civil-Service study 30 min, 6 days/week និងបង្កើត wedding-fund tracker។
-}{Kibo team/repo; skills matrix; PRD; English recording; 20+ study sessions; finance baseline.}
-
-\MonthPlan{Cyan}{កញ្ញា 2026 - Registration and Foundation}{បិទ registration និងបង្កើត foundation អាច demo បាន}{
-\item Complete Kibo application before deadline and save proof។
-\item Build coordinate/vector/orientation/image-processing exercises 3។
-\item Design wireframes and ERD for users, products, categories, cart, orders។
-\item Implement authentication shell, product listing UI and clean Git workflow។
-\item Prepare one-page CV, LinkedIn headline and GitHub profile README។
-\item Send 3 targeted applications/week and learn 50 job-related English words។
-}{Registration proof; 3 Kibo exercises; ERD; working UI; CV/GitHub baseline; 12 applications/outreach.}
-
-\MonthPlan{Cyan}{តុលា 2026 - Simulator and Vertical Slice}{ធ្វើឱ្យ Kibo run និង Love my ស្ទីលមាន end-to-end slice}{
-\item Setup simulator and write installation guide។
-\item Complete first full Kibo mission attempt and structured logs។
-\item Implement authentication + product catalog API and connect frontend។
-\item Deploy staging version and run 2 mock interviews។
-\item Review wedding saving rate and remove one unnecessary recurring expense។
-}{Reproducible simulation; run-log template; deployed vertical slice; interview notes 2; savings review.}
-
-\MonthPlan{Cyan}{វិច្ឆិកា 2026 - Robustness and E-Commerce Core}{បម្លែង prototype ទៅ stable engineering output}{
-\item Create Kibo failure taxonomy and controlled experiments។
-\item Implement cart, checkout, order creation and admin product management។
-\item Add validation, loading/error states and at least 10 meaningful tests។
-\item Write recruiter-ready README with architecture and limitations។
-\item Apply 5 targeted jobs/week and maintain English/Civil-Service habits at 80\%។
-}{Experiment table; stable e-commerce core; tests 10+; README; application tracker.}
-
-\MonthPlan{Blue}{ធ្នូ 2026 - Freeze, Demo and Review}{បិទឆ្នាំជាមួយ evidence អាចបង្ហាញបាន}{
-\item Run 2 full Kibo mock rounds under constraints។
-\item Create code freeze, backup branch, release checklist and recovery plan।
-\item Release Love my ស្ទីល v1 with live demo and short video។
-\item Write one-page case study and update CV, LinkedIn, GitHub។
-\item Calculate 2026 savings and set 2027 monthly wedding target។
-}{Mock reports 2; Kibo release candidate; live v1; updated profiles; 2027 budget.}
-
-\MonthPlan{Cyan}{មករា 2027 - Preliminary Readiness}{អនុវត្តដូចថ្ងៃប្រកួត និងរក្សាគុណភាពក្រោមសម្ពាធ}{
-\item Repeated Kibo runs using fixed checklist and consistent environment។
-\item Tune only from logged evidence and keep last-known-good release។
-\item Team code review; remove fragile shortcuts; prepare technical pitch។
-\item Apply 5 jobs/week + 1 networking conversation/week។
-\item English project pitch twice/week and Civil-Service study daily។
-}{Tagged preliminary release; backup version; technical pitch; 20 applications/network actions.}
-
-\MonthPlan{Cyan}{កុម្ភៈ 2027 - Preliminary Round and Conversion}{ប្រកួតដោយស្ងប់ស្ងាត់ និងបម្លែងបទពិសោធន៍ទៅ career evidence}{
-\item Follow official preliminary procedure and submission checklist។
-\item Keep incident log and avoid high-risk last-minute changes without rollback។
-\item Save safe metrics/screenshots for Kibo case study។
-\item User-test Love my ស្ទីល with 3--5 people and improve it។
-\item Complete 3 mock interviews and shortlist 20 employers/roles។
-}{Submission evidence; retrospective draft; user-tested portfolio; 3 interview scorecards; employer shortlist.}
-
-\MonthPlan{Blue}{មីនា 2027 - Job Sprint and Graduation Readiness}{ធ្វើឱ្យ full-time job ជាគោលដៅសកម្ម}{
-\item If finalist: create final-round gap list; otherwise finish professional Kibo case study។
-\item Apply 5--8 high-fit roles/week with tailored CV and project links។
-\item Practice DSA, SQL, OOP, API design and debugging 4 days/week។
-\item Prepare graduation deliverables and a 30-60-90 day first-role plan។
-\item Automate wedding saving whenever income arrives។
-}{Finalist plan/case study; 20--30 applications; interview notebook; graduation checklist; 30-60-90 plan.}
-
-\MonthPlan{Violet}{មេសា 2027 - Finalist Preparation or Portfolio Leverage}{ប្រើ Kibo ជាភស្តុតាងអំពី problem solving និង robustness}{
-\item Finalist path: reproduce environment and prioritize robustness।
-\item Non-finalist path: publish public-safe case study without restricted material។
-\item Add CI, automated tests and issue templates to Love my ស្ទីល។
-\item Build Flutter architecture: navigation, state, API layer, local storage។
-\item Complete 2 interviews/mocks and request mentor portfolio feedback។
-}{Final-ready release/case study; CI passing; Flutter skeleton; interview records; mentor feedback.}
-
-\MonthPlan{Green}{ឧសភា 2027 - First Role Conversion and Mobile Delivery}{បង្ហាញថាអាច ship software មិនមែនតែរៀន tutorial}{
-\item Secure full-time technology offer or expand outreach via referrals/direct contact។
-\item If employed: learn codebase and ship one small well-tested improvement។
-\item Complete Flutter authentication, core screens and API integration។
-\item Write technical documentation and demo script។
-\item Practice daily stand-up updates and asking clarifying questions in English।
-}{Offer/onboarding evidence or expanded pipeline; working Flutter flow; documentation; monthly saving first.}
-
-\MonthPlan{Green}{មិថុនា 2027 - Graduation and Stability}{បញ្ចប់ major commitments ដោយមិនបោះបង់សុខភាព និងគុណភាព}{
-\item Complete graduation/project-defense requirements and archive artifacts។
-\item Finish Kibo final activities or team retrospective។
-\item If job searching: focused 6-week sprint; if employed: ask 30--60 day feedback។
-\item Release Year-4 mobile demo with README, architecture and limitations។
-\item Repeat English baseline assessment and update wedding-fund gap។
-}{Graduation artifacts; Kibo completion; mobile demo; job/feedback status; English comparison; wedding gap.}
-
-\MonthPlan{Green}{កក្កដា 2027 - Professional Rhythm}{បង្កើត routine ដែលអាចរស់បានជាមួយ full-time job}{
-\item Create weekly work-impact log: problem, action, result, feedback, next step។
-\item Own one small feature/bug from analysis to release។
-\item Select one work-relevant learning track and update portfolio case studies។
-\item Set fixed monthly wedding transfer and emergency-cash floor។
-\item Discuss wedding date, scale, guest priorities and non-negotiables។
-}{Professional weekly system; end-to-end work item 1; updated portfolio; automatic saving rule; wedding decisions.}
-
-\MonthPlan{Green}{សីហា 2027 - Ownership and Wedding Planning}{ទទួលខុសត្រូវលើ module និងសម្រេចការរៀបចំជីវិត}{
-\item Ask manager what strong performance means for next 6 months។
-\item Document recurring technical problem and propose improvement។
-\item Strengthen testing, logging and debugging in work stack។
-\item Finalize wedding date range, budget ceiling and decision owners។
-\item Continue English through meeting notes/status updates and weekly speaking session។
-}{Written expectations; improvement proposal; wedding date/budget framework; steady savings; stable habits.}
-
-\MonthPlan{Amber}{កញ្ញា 2027 - Engineer-Level Scope}{បង្ហាញ ownership ដោយ result មិនមែន title}{
-\item Complete one feature with requirement, design note, tests and release evidence។
-\item Request code-review feedback on clarity, correctness and maintainability។
-\item Teach/document one useful concept and complete 12-month roadmap review។
-\item Confirm wedding vendors only after comparing value, cost and cancellation risk।
-\item Create final three-month saving plan and protect weekly relationship time។
-}{Engineer-scope artifact; feedback notes; knowledge-sharing output; wedding/savings plan.}
-
-\MonthPlan{Amber}{តុលា 2027 - Performance and Budget Lock}{បិទការសម្រេចចិត្តធំៗមុនចុងឆ្នាំ}{
-\item Build performance evidence file and choose highest-value technical gap។
-\item Create 6-week learning sprint and improve one portfolio reliability/UX area។
-\item Lock wedding budget categories, payment dates and emergency cash floor។
-\item Create contingency plans and practice explaining a production problem in English।
-\item Complete Civil-Service monthly review test and weak-topic list។
-}{Performance evidence; learning plan; locked budget; contingency sheet; technical recording.}
-
-\MonthPlan{Rose}{វិច្ឆិកា 2027 - Close Work Strong, Protect Life}{បញ្ចប់ឆ្នាំការងារដោយ evidence និង wedding logistics ដោយស្ងប់ស្ងាត់}{
-\item Request year-end feedback and document 2028 career expectations។
-\item Close/hand over outstanding work with clear documentation។
-\item Update private CV with measurable achievements។
-\item Pay final wedding costs only with confirmation/receipt and draft household budget।
-\item Reduce optional side work; protect sleep, family and essential habits។
-}{Feedback; clean handover; updated CV; receipt tracker; household budget draft.}
-
-\MonthPlan{Rose}{ធ្នូ 2027 - Marriage, Review and Reset}{អបអរសាទរជីវិតថ្មី និងបញ្ចប់ឆ្នាំដោយភាពច្បាស់លាស់}{
-\item Complete the wedding warmly and responsibly without uncontrolled debt។
-\item Avoid major technical launches near the ceremony date។
-\item Complete joint finance review and write 2027 career review।
-\item Archive Kibo, Love my ស្ទីល, mobile project and work-safe evidence។
-\item Select only 3 Q1-2028 outcomes and keep minimum viable English/Civil-Service habits during recovery។
-}{Wedding completed responsibly; joint 2028 plan; career review; organized archive; Q1 priorities.}
-
-\section{Scorecard និង Review System}
-
-\subsection{Leading Indicators}
-\begin{longtable}{>{\bfseries\color{BlueDark}}p{0.15\textwidth}p{0.23\textwidth}p{0.24\textwidth}p{0.20\textwidth}}
-\toprule
-Area & Weekly Indicator & Monthly Evidence & Warning Sign \\
-\midrule
-Career Skills & 12--15 deep-work hours before job; 4--6 after job & Demo, tests, design note, shipped work & Tutorials without output \\
-Kibo-RPC & Planned simulations/experiments completed & Logs, tagged release, retrospective & Last-minute unlogged changes \\
-Job Search & 3--5 targeted applications/follow-ups & Interviews, feedback, improved CV & Mass applying without learning \\
-English & 5 speaking/writing sessions & Recording, mock interview, email samples & Watching only, no speaking \\
-Civil Service & 30--45 min, 6 days/week & Monthly quiz, weak-topic list & Habit gap over 3 days \\
-Finance & Save first, spend second & Wedding balance, budget variance & Borrowing for non-essential items \\
-Health/System & Sleep target + one recovery block & Weekly review completed & Chronic late nights \\
-\bottomrule
-\end{longtable}
-
-\subsection{Reusable Weekly Wall Scorecard}
-\begin{summaryBox}
-\textbf{Week of:} \rule{35mm}{0.4pt}\hfill\textbf{Theme:} \rule{55mm}{0.4pt}
-\begin{checklist}
-\item Career/Technical Must-Win: \rule{0.66\textwidth}{0.4pt}
-\item Project/Competition Must-Win: \rule{0.58\textwidth}{0.4pt}
-\item Life/Finance Must-Win: \rule{0.69\textwidth}{0.4pt}
-\end{checklist}
-\textbf{Evidence created:}\\[2mm]\rule{\textwidth}{0.4pt}\\[4mm]\rule{\textwidth}{0.4pt}\\[4mm]
-\textbf{One lesson:} \rule{0.78\textwidth}{0.4pt}\\[4mm]
-\textbf{One change next week:} \rule{0.68\textwidth}{0.4pt}
-\end{summaryBox}
-
-\subsection{Monthly Review Questions}
-\begin{checklist}
-\item តើខ្ញុំបានបង្កើត Evidence អ្វីខ្លះ?
-\item តើ Task ណាធ្វើឱ្យ Career រីកចម្រើនខ្លាំងបំផុត?
-\item តើបញ្ហាណាកើតឡើងម្តងហើយម្តងទៀត?
-\item តើខ្ញុំបាននិយាយ English មែនទេ ឬគ្រាន់តែមើលវីដេអូ?
-\item តើ Project មួយណាត្រូវបញ្ចប់ មុនចាប់ផ្ដើមថ្មី?
-\item តើ Wedding Fund ទៅតាមផែនការទេ?
-\item តើ Sleep, Health និង Relationship កំពុងបង់ថ្លៃឱ្យ Ambition ឬទេ?
-\item តើ Must-Win 3 សម្រាប់ខែក្រោយជាអ្វី?
-\end{checklist}
-
-\begin{heroBox}
-\centering
-{\Large\bfseries Daily Reminder}\\[2mm]
-ខ្ញុំមិនត្រូវធ្វើអ្វីគ្រប់យ៉ាងនៅថ្ងៃនេះទេ។\\
-ខ្ញុំត្រូវធ្វើអ្វីដែលសំខាន់បំផុត ឱ្យបានជាប់លាប់ និងមាន Evidence។
-\end{heroBox}
+\vspace{2mm}
+\begin{softbox}{Violet}\textbf{Three outcomes for Q1 2028}\CheckBlank{1.}\CheckBlank{2.}\CheckBlank{3.}\end{softbox}
 
 \end{document}
