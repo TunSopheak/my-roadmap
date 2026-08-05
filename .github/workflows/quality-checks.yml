@@ -38,7 +38,8 @@ jobs:
             texlive-latex-extra \
             texlive-fonts-recommended \
             texlive-fonts-extra \
-            fonts-noto-core
+            fonts-noto-core \
+            poppler-utils
       - name: Compile 33-page printable planner
         working-directory: roadmap
         run: |

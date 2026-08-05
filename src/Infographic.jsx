@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  COLORS,
   categories,
   months,
   plannerCategoryIds,
