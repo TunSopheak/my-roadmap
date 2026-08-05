@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# My Roadmap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A living career-and-life operating system for **Tun Sopheak**, a Year-4 Computer Science student at RUPP (evening class E8), covering **August 2026 to August 2031**.
 
-## Available Scripts
+[![Roadmap quality checks](https://github.com/TunSopheak/my-roadmap/actions/workflows/quality-checks.yml/badge.svg)](https://github.com/TunSopheak/my-roadmap/actions/workflows/quality-checks.yml)
 
-In the project directory, you can run:
+## North Star
 
-### `npm start`
+Become a dependable **Software Engineer** who can own a feature from requirement and design through implementation, testing, deployment, documentation, and support.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Current priorities
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Career and skills** - refresh Full-Stack Web Development, learn Flutter deeply, strengthen English, and build **Love my ស្ទីល**.
+2. **Competition** - prepare seriously for the **Kibo Robot Programming Challenge** using reproducible simulations and evidence.
+3. **Life and finance** - secure full-time technology income and build a responsible wedding fund for 2027.
+4. **Long-term optionality** - study 30-45 minutes daily for the civil-service clerk examination.
 
-### `npm test`
+## Repository map
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```text
+my-roadmap/
+├── src/                         # Interactive React roadmap
+├── roadmap/
+│   ├── roadmap.tex              # Printable XeLaTeX master document
+│   ├── five-year-strategy.md
+│   └── action-plan-2026-2027.md
+├── evidence/                    # Public-safe proof of completed work
+├── reviews/                     # Weekly, monthly, and yearly review indexes
+├── templates/                   # Reusable review and case-study templates
+└── .github/workflows/           # Automated React + XeLaTeX validation
+```
 
-### `npm run build`
+## Interactive roadmap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Production build:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+```
 
-### `npm run eject`
+The project is configured for GitHub Pages at:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`https://TunSopheak.github.io/my-roadmap`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Printable roadmap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd roadmap
+xelatex -interaction=nonstopmode -halt-on-error roadmap.tex
+xelatex -interaction=nonstopmode -halt-on-error roadmap.tex
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The LaTeX document prefers **Khmer OS Siemreap** and falls back to **Noto Sans Khmer** or **Hanuman**.
 
-## Learn More
+GitHub Actions also compiles the PDF and stores it as the `tun-sopheak-roadmap-pdf` workflow artifact.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Review rhythm
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Daily:** choose one must-win task.
+- **Weekly:** review evidence and select three must-wins.
+- **Monthly:** update outcomes, KPI progress, and the next month's plan.
+- **Yearly:** revise the strategy using real evidence, not optimistic titles or arbitrary financial projections.
 
-### Code Splitting
+## Safety and privacy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Never commit passwords, API keys, private employer code, restricted Kibo material, identity documents, bank details, or sensitive family information.
